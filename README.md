@@ -1,6 +1,8 @@
 # wx.request
 封装微信小程序的请求方式
+
 请求方式封装在 /utils/$ajax.js
+
 以下是在index.js页面调用方法
 
 const $ajax = require("../../utils/$ajax.js");
