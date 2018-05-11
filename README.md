@@ -1,5 +1,28 @@
 # wx.request
 封装微信小程序的请求方式
+utils/$ajax.js下文件东西
+
+module.exports.getData = function (url) {   //封装的请求方式   
+  var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'GET';
+  var header = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' };
+  return new Promise(function (resolve, reject) {
+    const dev = "https://database.issp.bjike.com";  //设置域名
+    wx.request({
+      url: dev + url,
+      data: data,
+      method: method,
+      header: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+      success: function (res) {
+        resolve(res)
+      },
+      fail: function (res) {
+        reject(res)
+      }
+    })
+  })
+}
+
 
 以下是在index.js页面调用方法
 
