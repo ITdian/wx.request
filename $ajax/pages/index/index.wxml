@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+    你好!
+   <view>
+      我是彼岸
+    </view>
+</view>
